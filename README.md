@@ -165,7 +165,7 @@ By default a crawler instance will remember all the urls it ever crawled and wil
 #### Supported options
 
 * `depth` - the depth to which the links from the original page will be crawled.
-Example: if `site1.com` contains a link to `site2.com` which contains a link to `site3.com`, `depth` is 2 and we crawl from `site1.com` then we will crawl `site2.com` but will not crawl `site3.com` as it will be too deep. 
+Example: if `site1.com` contains a link to `site2.com` which contains a link to `site3.com`, `depth` is 2 and we crawl from `site1.com` then we will crawl `site2.com` but will not crawl `site3.com` as it will be too deep.
 
 The default value is `2`.
 
@@ -176,6 +176,14 @@ The default value is `false`.
 * `userAgent` - User agent to send with crawler requests.
 
 The default value is `crawler/js-crawler`
+
+* `accept` - Advertises which content types, expressed as MIME types, the client is able to understand.
+
+There is no default value
+
+* `cookie` - Cookie information that will be sent
+
+There is no default value
 
 * `maxRequestsPerSecond` - the maximum number of HTTP requests per second that can be made by the crawler, default value is 100
 

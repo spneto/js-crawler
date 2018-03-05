@@ -48,6 +48,8 @@ Crawler.prototype.configure = function(options) {
   this.depth = Math.max(this.depth, 0);
   this.ignoreRelative = (options && options.ignoreRelative) || this.ignoreRelative;
   this.userAgent = (options && options.userAgent) || this.userAgent;
+  this.accept = (options && options.accept) || this.accept;
+  this.cookie = (options && options.cookie) || this.cookie;
   this.maxConcurrentRequests = (options && options.maxConcurrentRequests) || this.maxConcurrentRequests;
   this.maxRequestsPerSecond = (options && options.maxRequestsPerSecond) || this.maxRequestsPerSecond;
   this.shouldCrawl = (options && options.shouldCrawl) || this.shouldCrawl;
@@ -160,7 +162,9 @@ Crawler.prototype._crawlUrl = function(url, referer, depth) {
     followAllRedirects: true,
     headers: {
       'User-Agent': this.userAgent,
-      'Referer': referer
+      'Referer': referer,
+      'Accept': this.accept,
+      'Cookie': this.cookie
     }
   }, function(error, response) {
     if (self.knownUrls[url]) {
