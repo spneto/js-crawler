@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antivanov/js-crawler"
+    "url": "https://github.com/spneto/js-crawler"
   },
   "keywords": [
     "web-crawler",
